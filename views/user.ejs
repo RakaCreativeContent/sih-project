@@ -20,9 +20,26 @@
     logout.addEventListener('click', () => window.location.href = '/logout')
     const getUsers = async() => {
       const res = await fetch('/api/auth/getUsers')
-      const data = await res.json()
+      const data = await res.json();
+      // console.log(data.user)
+      // console.log(data.user.forEach(el => {
+      //   console.log(el.username)
+      //   console.log(el.contact)
+      //   if(el.username == 'raj_raghuwanshi'){
+      //     let li = `<li class="px-6 py-2 border-b border-gray-400 w-full rounded-t-lg"> 
+      //       <b>Username</b> : ${el.username} <br> 
+      //       <b>Fullname</b> : ${el.fullname} <br>
+      //       <b>Contact</b> : ${el.contact} <br>
+      //       <b>Aadhar number</b> : ${el.aadharnum} <br>
+      //        <b>Role</b> : ${el.role} </li>`
+      //   }else{
+      //     return null;
+      //   }
+      // }))
       data.user.map((mappedUser)=> {
-        if (mappedUser.username !== 'admin') {
+        console.log(mappedUser)
+        console.log(mappedUser.username)
+        if (mappedUser.username == 'raj_raghuwanshi') {
           let li = `<li class="px-6 py-2 border-b border-gray-400 w-full rounded-t-lg"> 
             <b>Username</b> : ${mappedUser.username} <br> 
             <b>Fullname</b> : ${mappedUser.fullname} <br>

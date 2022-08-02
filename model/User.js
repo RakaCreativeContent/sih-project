@@ -7,7 +7,7 @@ const UserSchema = new Mongoose.Schema({
   },
   fullname: {
     type: String,
-    unique: true,
+    unique: false,
     required: true,
   },
   contact: {
@@ -31,5 +31,5 @@ const UserSchema = new Mongoose.Schema({
     required: true,
   },
 })
-const User = Mongoose.model("sih2", UserSchema)
+const User = Mongoose.model("sih3", UserSchema)
 module.exports = User
